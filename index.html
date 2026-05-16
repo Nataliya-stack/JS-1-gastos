@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @import "tailwindcss"; 
+        @theme {
+            --font-sans: ui-sans-serif, system-ui, sans-serif;
+            --color-brand: #ff4500;
+        }
+        @layer base {
+            p { @apply mb-2 leading-relaxed text-gray-700; }       
+            input { @apply rounded-sm border-1 border-gray-500 text-pink-800 font-serif; }
+            input, label { @apply inline-block flex-1 pl-4; }
+            button { @apply rounded-md shadow-xs border-2 border-pink-800 px-4 py-[0.5]; }
+        }        
+    </style>
+    <title>JS - 1</title>
+</head>
+<body class="container mx-auto w-full md:w-4/5 bg-indigo-950 flex items-center justify-center min-h-screen p-2 md:p-0">
+
+ 
+    <div class="w-full md:w-3/4 m-2 pt-8 pb-6 px-4 md:px-6 bg-gray-100 rounded-sm">
+        <h1 class="text-pink-800 text-xl font-bold">Gastos de la casa</h1>
+        <p class="font-bold pt-2 text-neutral-700">Todo lo que viene del HTML es un string (texto) и hay que convertirlo</p>
+
+        <form>
+            <p class="flex flex-col md:flex-row md:items-center mt-2 gap-1 md:gap-0">
+                <label for="nombre" class="text-left md:text-right md:pr-8 flex-1">Tu nombre:</label>
+                <input id="nombre" class="w-full md:w-auto flex-2 border border-gray-600 rounded-sm text-pink-700 pl-4 py-1 md:py-0" type="text" placeholder="Escribe tu nombre de pila">
+            </p>
+            
+            <p class="flex flex-col md:flex-row md:items-center my-2 gap-1 md:gap-0">
+                <label for="apellidos" class="text-left md:text-right md:pr-8 flex-1">Apellido(s):</label>
+                <input id="apellidos" class="w-full md:w-auto flex-2 border border-gray-600 rounded-sm text-pink-700 pl-4 py-1 md:py-0" type="text" placeholder="Indica tu(s) apellido(s)">
+            </p>
+
+            <fieldset class="border border-pink-800 p-4 mb-4">
+                <legend class="bg-pink-800 text-white px-3">Gastos fijos</legend>
+                
+                <p class="flex flex-col md:flex-row md:items-center my-2 gap-1 md:gap-0">
+                    <label for="internet" class="text-left md:text-right md:pr-8 flex-1">Internet:</label>
+                    <input id="internet" class="w-full md:w-auto flex-2 border border-gray-600 rounded-sm text-pink-800 pl-4 py-1 md:py-0" type="number" value="43">
+                </p>
+                <p class="flex flex-col md:flex-row md:items-center my-2 gap-1 md:gap-0">
+                    <label for="luz" class="text-left md:text-right md:pr-8 flex-1">Luz:</label>
+                    <input id="luz" class="w-full md:w-auto flex-2 border border-gray-600 rounded-sm text-pink-700 pl-4 py-1 md:py-0" type="number">
+                </p>
+                <p class="flex flex-col md:flex-row md:items-center my-2 gap-1 md:gap-0">
+                    <label for="agua" class="text-left md:text-right md:pr-8 flex-1">Agua:</label>
+                    <input id="agua" class="w-full md:w-auto flex-2 border border-gray-600 rounded-sm text-pink-700 pl-4 py-1 md:py-0" type="number">
+                </p>
+                <p class="flex flex-col md:flex-row md:items-center my-2 gap-1 md:gap-0">
+                    <label for="gas" class="text-left md:text-right md:pr-8 flex-1">Gas:</label>
+                    <input id="gas" class="w-full md:w-auto flex-2 border border-gray-600 rounded-sm text-pink-700 pl-4 py-1 md:py-0" type="number">
+                </p>
+                <p class="flex flex-col md:flex-row md:items-center my-2 gap-1 md:gap-0">
+                    <label for="alquiler" class="text-left md:text-right md:pr-8 flex-1">Alquiler: </label>
+                    <input id="alquiler" class="w-full md:w-auto flex-2 border border-gray-600 rounded-sm text-pink-700 pl-4 py-1 md:py-0" type="number">
+                </p>
+            </fieldset>
+
+            <p class="flex flex-col md:flex-row gap-3">
+                <button class="w-full md:w-auto text-pink-800 font-bold bg-white outline-offset-2 py-2 md:py-[0.5] cursor-pointer" type="button" onclick="calcular()">
+                    Calcular Gastos
+                </button>               
+                <button class="w-full md:w-auto text-pink-800 font-bold bg-white outline-offset-2 py-2 md:py-[0.5] cursor-pointer" type="button" onclick="rellenar()">
+                    Rellenar Datos
+                </button>
+            </p>
+            <p id="totalGastos" class="flex flex-row border border-pink-800 mt-4 px-2 min-h-[30px] items-center">&nbsp;</p>
+        </form>
+    </div>
+   
+    <script src="./js/app.js"></script>
+</body>
+</html>
